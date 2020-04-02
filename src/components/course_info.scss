@@ -1,0 +1,27 @@
+.container-header {
+  background-color: grey;
+  padding: 7px;
+  border: 1px solid #bbc1c9;
+  border-radius: 10px;
+  color: white;
+  max-width: 850px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+.course-info-container {
+  max-width: 850px;
+  padding: 10px 10px 10px;
+  border-left: 1px solid #bbc1c9;
+  border-right: 1px solid #bbc1c9;
+  border-bottom: 1px solid #bbc1c9;
+  background-color: #fff;
+  border-radius: 0px 0px 10px 10px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,6 +1,7 @@
 import './weekly_schedule.scss';
 import _ from 'lodash';
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { courses } from '../courses.js';
 
 const format_timeslot = (timeslot) => _.trim(_.split(timeslot, '-')[0]);
@@ -33,21 +34,29 @@ export default class WeeklySchedule extends React.Component {
       [`20:30`]: days_of_week_obj(),
     };
     _.forEach(courses, (course, course_code) => {
-      _.forEach(course.class, current_class => {
-        table_grid_data[`${current_class.time}`][current_class.day] =
-          <td className="class-link" key={_.uniqueId(course_code)}>
-            <span
-            dangerouslySetInnerHTML={{
-              __html: `<b>${course_code}</b>-${class_type_map[current_class.type]}   
-              ${current_class.location}`,
-            }} />
-          </td>;
+      _.forEach(course.classes, ({ section, section_classes, section_registered }) => {
+        if (section_registered) {
+          _.forEach(section_classes, ({ time, day, type, location, registered }) => {
+            if (registered) {
+              table_grid_data[`${time}`][day] =
+              <td className="class-link" key={_.uniqueId(course_code)}>
+              <Link exact to={`./course-info/${course_code}_${section}`}>
+                <span
+                dangerouslySetInnerHTML={{
+                  __html: `<b>${course_code}${section}</b>-${class_type_map[type]}   
+                  ${location}`,
+                }} />
+              </Link>
+            </td>;
+            }
+          })
+        }
       });
     });
 
     return (
-      <div>
-        <table style={{ height: "100%", width: "100%" }}>
+      <div className="schedule-table" >
+        <table style={{ height: "100%", width: "100%", borderCollapse:"separate" }}>
           <thead>
             <tr>
               { _.map(["Schedule", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], day => 
