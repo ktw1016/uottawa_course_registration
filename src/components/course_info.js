@@ -5,7 +5,6 @@ import { courses } from '../courses.js';
 import { Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
 import Logo from "./uottawa_hor_white.png";
-
 const course_type_map = {
   lecture: "Lecture",
   lab: "Lab",
@@ -67,24 +66,30 @@ export function CourseInfo() {
       </div>
     </div>
     <Link exact to="/"> ← Back to timetable </Link>
-    <span
-      style={{fontSize: 30, marginLeft:"1%"}}
-      dangerouslySetInnerHTML={{
-        __html: `<b> ${course_code} - ${current_course.name} </b>`,
-      }} />
-    <div className="container-header">
-      {`Section ${section}`}
-      <Link>
-        <button style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "10px" }} className="col-md-2">
-          <b>Swap Section</b>
-        </button>
-      </Link>
-    </div>
-    <div className="course-info-container">
-      <div className="d-flex justify-content-center">
-        <CourseTimeSlots classes={current_course_section.section_classes} show_all_classes={false} />
+    {/*<div className="side">
+      <Link style={{fontWeight:"bold"}} className="sideBar">Home</Link><br></br>
+      <Link className="sideBar">My Requirnment</Link><br></br>
+      <Link className="sideBar">Ask for help</Link><br></br>
+    </div> */}
+    <div className="main">
+      <span
+          style={{fontSize: 30, marginLeft:"1%"}}
+          dangerouslySetInnerHTML={{
+            __html: `<b> ${course_code} - ${current_course.name} </b>`,
+          }} />
+        <div className="container-header">
+          {`Section ${section}`}
+          <Link>
+            <button style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "10px" }} className="col-md-2">
+              <b>Swap Section</b>
+            </button>
+          </Link>
+        </div>
+        <div className="course-info-container">
+          <div className="d-flex justify-content-center">
+            <CourseTimeSlots classes={current_course_section.section_classes} show_all_classes={false} />
+          </div>
       </div>
     </div>
-
   </div>
 };

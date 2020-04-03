@@ -29,3 +29,26 @@ th {
   padding-bottom: 10px;
 
 }
+.main{
+  width:90%;
+  float: left;
+}
+.side{
+  width: 10%;
+  padding-bottom: 45%;
+  float: left;
+  background-color: #474747;
+}
+.sideBar{
+  color: white;
+  font-size: 1.2em;
+  padding-left: 10%;
+  margin-top: 20px;
+  display: inline-block;
+  &:hover{
+    color: white;
+    background-color: grey;
+    width: 100%;
+  }
+
+}
