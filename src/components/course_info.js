@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { courses } from '../courses.js';
 import { Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
-
+import Logo from "./uottawa_hor_white.png";
 const course_type_map = {
   lecture: "Lecture",
   lab: "Lab",
@@ -181,27 +181,34 @@ export function CourseInfo() {
   const section = _.split(course_id, '_')[1];
   const current_course = courses[course_code];
   const current_course_section = _.find(current_course.classes, cls => cls.section === section);
-  
+
   return <div className="d-flex flex-column">
-    <Link exact to="/"> ← Back to timetable </Link>
-    <span
-      style={{fontSize: 30}}
-      dangerouslySetInnerHTML={{
-        __html: `<b> ${course_code} - ${current_course.name} </b>`,
-      }} />
-    <div className="container-header">
-      {`Section ${section}`}
-      <Link exact to={`../swap-section/${course_id}`}>
-        <button style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "10px" }} className="col-md-2">
-          <b>Swap Section</b>
-        </button>
-      </Link>
-    </div>
-    <div className="course-info-container">
-      <div className="d-flex justify-content-center">
-        <CourseTimeSlots classes={current_course_section.section_classes} show_all_classes={false} />
+    <div>
+      <div style={{backgroundColor: "#6A0000"}}>
+        <img id="logo" src={Logo}></img>
+        <span id="title">UOttawa Course Selection System</span>
       </div>
     </div>
-
+    <Link exact to="/"> ← Back to timetable </Link>
+    <div className="main">
+      <span
+        style={{fontSize: 30, marginLeft:"1%"}}
+        dangerouslySetInnerHTML={{
+          __html: `<b> ${course_code} - ${current_course.name} </b>`,
+        }} />
+      <div className="container-header">
+        {`Section ${section}`}
+        <Link exact to={`../swap-section/${course_id}`}>
+          <button style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "10px" }} className="col-md-2">
+            <b>Swap Section</b>
+          </button>
+        </Link>
+      </div>
+      <div className="course-info-container">
+        <div className="d-flex justify-content-center">
+          <CourseTimeSlots classes={current_course_section.section_classes} show_all_classes={false} />
+        </div>
+      </div>
+    </div>
   </div>
 };
