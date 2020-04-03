@@ -25,3 +25,32 @@ th {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.conflict-hover {
+  position: relative;
+  display: inline-block;
+  font-size: 10px;
+  color: red;
+  font-weight: 700;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+.conflict-hover .conflict-hover-text {
+  visibility: hidden;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  border: 1px solid red;
+  color: black;
+  background-color: white;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.conflict-hover:hover .conflict-hover-text {
+  visibility: visible;
+}

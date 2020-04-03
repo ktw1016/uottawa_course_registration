@@ -1,4 +1,91 @@
 export var courses = {
+  SEG2105: {
+    name: "Introduction to Software Engineering",
+    classes: [
+      {
+        section: "A",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Thursday",
+            time: "14:30",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Tuesday",
+            time: "19:00",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Thursday",
+            time: "16:00",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Thursday",
+            time: "17:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Thursday",
+            time: "19:00",
+            location: "TBT1100",
+            registered: false,
+          },
+        ]
+      },
+      {
+        section: "B",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Wednesday",
+            time: "10:00",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Wednesday",
+            time: "11:30",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Wednesday",
+            time: "16:00",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Wednesday",
+            time: "17:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Tuesday",
+            time: "20:30",
+            location: "TBT1100",
+            registered: false,
+          },
+        ]
+      }
+    ],
+  },
   CSI3125: {
     name: "Analysis and Design of User Interfaces",
     classes: [
@@ -40,6 +127,47 @@ export var courses = {
             time: "8:30",
             location: "TBT1100",
             registered: true,
+          },
+        ]
+      },
+      {
+        section: "B",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Tuesday",
+            time: "10:00",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Tuesday",
+            time: "13:00",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Thursday",
+            time: "11:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Friday",
+            time: "11:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Tuesday",
+            time: "8:30",
+            location: "TBT1100",
+            registered: false,
           },
         ]
       }
