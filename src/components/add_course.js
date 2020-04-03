@@ -101,20 +101,27 @@ export class ReactAddCourse extends React.Component {
             style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "10px" }}
             className="col-md-4"
             onClick={() => {
+              var temp_success = false;
               _.forEach(courses[course_code].classes, section_obj => {
                 if (section_obj.section === section) {
                   section_obj.section_registered = true;
                   _.forEach(section_obj.section_classes, cls => {
                     if (cls.type !== "lecture") {
-                      const selected_cls = _.split(document.querySelector(`input[name="${section}_${cls.type}"]:checked`).value, '_');
-                      cls.registered = cls.day===selected_cls[0] && cls.time===selected_cls[1] && cls.location===selected_cls[2];
+                      const input_radio = document.querySelector(`input[name="${section}_${cls.type}"]:checked`);
+                      if (!input_radio) {
+                        alert(`Please select a timeslot for ${cls.type} component`);
+                      } else {
+                        const selected_cls = _.split(input_radio.value, '_');
+                        cls.registered = cls.day === selected_cls[0] && cls.time === selected_cls[1] && cls.location === selected_cls[2];
+                        temp_success = true;
+                      }
                     } else {
                       cls.registered = true;
                     }
                   })
                 }
               })
-              this.setState({success: true})
+              this.setState({success: temp_success})
             }}
           >
             <b> ADD COURSE </b>
