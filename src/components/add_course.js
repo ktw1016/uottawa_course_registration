@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { courses } from '../courses';
 import { Details } from './Details.js';
 import { ReactCourseTimeSlots } from './course_info.js';
+import Logo from "./uottawa_hor_white.png";
 
 const course_type_map = {
   lecture: "Lecture",
@@ -138,10 +139,14 @@ export default class AddCourse extends React.Component {
       .pickBy((course, course_code) => query.length > 2 && _.includes(course_code, query))
       .value();
 
-    return <div style={{ margin: 20, display: "flex", flexDirection: "column" }}>
-      <Link exact to="/"> ← Back to timetable </Link>
+    return <div style={{ display: "flex", flexDirection: "column" }}>
+      <div style={{backgroundColor: "#6A0000"}}>
+        <img id="logo" src={Logo}></img>
+        <span id="title">UOttawa Course Selection System</span>
+      </div>
+      <Link exact to="/" > ← Back to timetable </Link>
       <span
-        style={{fontSize: 30}}
+        style={{fontSize: 30 ,marginLeft:"1%"}}
         dangerouslySetInnerHTML={{
         __html: `<b>Add course</b>`
         }} />
@@ -154,7 +159,7 @@ export default class AddCourse extends React.Component {
             }} />
           <input
             type="text"
-            placeholder="SEG3125"
+            placeholder="Example: SEG3125"
             // only search when query string length > 2 and uppercase the query, remove all whitespace
             onChange={(evt) =>
               this.setState({

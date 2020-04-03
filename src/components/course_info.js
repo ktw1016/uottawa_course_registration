@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { courses } from '../courses.js';
 import { Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
+import Logo from "./uottawa_hor_white.png";
 
 const course_type_map = {
   lecture: "Lecture",
@@ -181,11 +182,17 @@ export function CourseInfo() {
   const section = _.split(course_id, '_')[1];
   const current_course = courses[course_code];
   const current_course_section = _.find(current_course.classes, cls => cls.section === section);
-  
+
   return <div className="d-flex flex-column">
+    <div>
+      <div style={{backgroundColor: "#6A0000"}}>
+        <img id="logo" src={Logo}></img>
+        <span id="title">UOttawa Course Selection System</span>
+      </div>
+    </div>
     <Link exact to="/"> ← Back to timetable </Link>
     <span
-      style={{fontSize: 30}}
+      style={{fontSize: 30, marginLeft:"1%"}}
       dangerouslySetInnerHTML={{
         __html: `<b> ${course_code} - ${current_course.name} </b>`,
       }} />
