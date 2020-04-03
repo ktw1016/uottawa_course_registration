@@ -11,22 +11,29 @@ export default class Home extends React.Component {
         <img id="logo" src={Logo}></img>
         <span id="title">UOttawa Course Selection System</span>
       </div>
-      <span
-        style={{color:"black",fontSize: 30}}
-        dangerouslySetInnerHTML={{
-        __html: `<b>Home - Current Schedule </b>`
-      }} />
-      <div className="d-flex justify-content-end">
-        <Link exact to="/add-course">
-          <button style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "10px" }} className="col-md-1">
-              <b>+ Add Course</b>
-          </button>
-        </Link>
-        <button><b>Print Timetable</b></button>
-
+      <div className="side">
+        <Link style={{fontWeight:"bold"}} className="sideBar">Home</Link><br></br>
+        <Link className="sideBar">My Requirnment</Link><br></br>
+        <Link className="sideBar">Ask for help</Link><br></br>
       </div>
-      <br></br>
-      <WeeklySchedule/>
+      <div className="main">
+        <span
+          style={{color:"black",fontSize: 30, marginLeft:"30px"}}
+          dangerouslySetInnerHTML={{
+          __html: `<b>Home - Current Schedule </b>`
+        }} />
+        <div style={{marginRight:"20px"}}className="d-flex justify-content-end">
+          <Link exact to="/add-course">
+            <button style={{ backgroundColor: "#b3ffd9", maxWidth: "100%", borderRadius: "5px" }} className="col-md-1">
+                <b>+ Add Course</b>
+            </button>
+          </Link>
+          <button style={{backgroundColor:"grey"}}><b>Print Timetable</b></button>
+
+        </div>
+        <br></br>
+        <WeeklySchedule/>
+      </div>
     </div>
   }
 }
