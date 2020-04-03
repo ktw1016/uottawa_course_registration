@@ -40,10 +40,10 @@ export default class WeeklySchedule extends React.Component {
             if (registered) {
               table_grid_data[`${time}`][day] =
               <td className="class-link" key={_.uniqueId(course_code)}>
-              <Link exact to={`./course-info/${course_code}_${section}`}>
+              <Link style={{color:"white"}} exact to={`./course-info/${course_code}_${section}`}>
                 <span
                 dangerouslySetInnerHTML={{
-                  __html: `<b>${course_code}${section}</b>-${class_type_map[type]}   
+                  __html: `<b>${course_code}${section}</b>-${class_type_map[type]}
                   ${location}`,
                 }} />
               </Link>
@@ -59,7 +59,7 @@ export default class WeeklySchedule extends React.Component {
         <table style={{ height: "100%", width: "100%", borderCollapse:"separate" }}>
           <thead>
             <tr>
-              { _.map(["Schedule", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], day => 
+              { _.map(["Schedule", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], day =>
                 <td className="tbl-header" key={day}>
                   {day}
                 </td>
@@ -67,7 +67,7 @@ export default class WeeklySchedule extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {_.map(row_headers, timeslot => 
+            {_.map(row_headers, timeslot =>
               <tr key={timeslot}>
                 <td className="tbl-header" key={timeslot}>
                   {timeslot}

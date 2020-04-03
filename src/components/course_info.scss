@@ -8,6 +8,8 @@
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  margin-left: 3%;
+
 }
 .course-info-container {
   max-width: 850px;
@@ -20,8 +22,10 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
+  margin-left: 3%;
 }
 th {
   padding-top: 10px;
   padding-bottom: 10px;
+
 }
