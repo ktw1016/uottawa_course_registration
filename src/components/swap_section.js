@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Details } from './Details.js';
 import { useParams } from "react-router-dom";
 import { ReactCourseTimeSlots } from './course_info.js';
+import Logo from "./uottawa_hor_white.png"
 
 
 export class ReactSwapSection extends React.Component {
@@ -23,6 +24,10 @@ export class ReactSwapSection extends React.Component {
     const current_course = courses[course_code];
   
     return <div className="d-flex flex-column">
+      <div style={{backgroundColor: "#6A0000"}}>
+        <img id="logo" src={Logo}></img>
+        <span id="title">UOttawa Course Selection System</span>
+      </div>
       <Link exact to={`/`}> ← Back to timetable </Link>
       <span
         style={{fontSize: 30}}

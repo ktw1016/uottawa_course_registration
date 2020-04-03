@@ -1,6 +1,135 @@
 export var courses = {
-  SEG2105: {
-    name: "Introduction to Software Engineering",
+  SEG3102: {
+    name: "Software Design and Architecture",
+    classes: [
+      {
+        section: "A",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Thursday",
+            time: "14:30",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Tuesday",
+            time: "19:00",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Thursday",
+            time: "16:00",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Thursday",
+            time: "17:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Thursday",
+            time: "19:00",
+            location: "TBT1100",
+            registered: false,
+          },
+        ]
+      },
+      {
+        section: "B",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Wednesday",
+            time: "10:00",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Wednesday",
+            time: "11:30",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Wednesday",
+            time: "16:00",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Wednesday",
+            time: "17:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Tuesday",
+            time: "20:30",
+            location: "TBT1100",
+            registered: false,
+          },
+        ]
+      },
+      {
+        section: "C",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Monday",
+            time: "14:30",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Monday",
+            time: "20:30",
+            location: "SITE1120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Monday",
+            time: "13:00",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "lab",
+            day: "Tuesday",
+            time: "20:30",
+            location: "SITE3120",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Wednesday",
+            time: "13:00",
+            location: "TBT1100",
+            registered: false,
+          },
+        ]
+      },
+
+    ],
+  },
+  SEG4145: {
+    name: "Real Time and Embedded Software Design",
     classes: [
       {
         section: "A",
@@ -239,6 +368,33 @@ export var courses = {
             time: "11:30",
             location: "DMS3120",
             registered: true,
+          },
+        ]
+      },
+      {
+        section: "B",
+        section_registered: false,
+        section_classes: [
+          {
+            type: "lecture",
+            day: "Friday",
+            time: "16:00",
+            location: "TBT1100",
+            registered: false,
+          },
+          {
+            type: "lecture",
+            day: "Friday",
+            time: "17:30",
+            location: "TBT1100",
+            registered: false,
+          },
+          {
+            type: "tutorial",
+            day: "Thursday",
+            time: "20:30",
+            location: "DMS3120",
+            registered: false,
           },
         ]
       },
